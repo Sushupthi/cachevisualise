@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Cache Visualization</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cache Visualization</h1>
+    <div class="controls">
+      <button onclick="performOperation('get')">Get</button>
+      <button onclick="performOperation('put')">Put</button>
+      <button onclick="performOperation('delete')">Delete</button>
+      <select id="evictionPolicy" onchange="changePolicy(this.value)">
+        <option value="LRU">LRU</option>
+        <option value="LFU">LFU</option>
+      </select>
+    </div>
+    
+    <div class="cache-container" id="cacheContainer"></div>
+    <div class="freq-container" id="frequencyContainer"></div>
+    <div class="log-container" id="logContainer">
+      <h3>Operation Log</h3>
+      <ul id="logList"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
